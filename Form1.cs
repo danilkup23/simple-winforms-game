@@ -17,14 +17,14 @@ namespace ComputerMasterClass
         private const int MoveStep = 7;
         private const int BackgroundSpeed = 12;
         private const int MinRandomSpeed = 3;
-        private const int MaxRandomSpeed = 5;
+        private const int MaxRandomSpeed = 8;
         private const int FPS = 60;
         private const string HeaderStartText = "Начать игру";
         private const string StartText = "Вы хотите начать игру?";
         private const string HeaderCrashText = "Поражение";
         private const string CarsCrashText = "Оба игрока проиграли!\nХотите начать игру заново?";
-        private const string LoseFirstPlayerText = "Первый игрок проиграл\n Хотите начать игру заново?";
-        private const string LoseSecondPlayerText = "Второй игрок проиграл\n Хотите начать игру заново?";
+        private const string LoseFirstPlayerText = "Первый игрок проиграл\nХотите начать игру заново?";
+        private const string LoseSecondPlayerText = "Второй игрок проиграл\nХотите начать игру заново?";
 
         // Визуальные элементы
         private PictureBox FirstBackgroundPicture;
@@ -37,12 +37,11 @@ namespace ComputerMasterClass
 
         // Координаты для восстановления исходного состояния расположения
         // (для повторного запуска)
-        //private Point PointCarSprite1;
-        //private Point PointCarSprite2;
-        //private Point PointObstacle1;
-        //private Point PointObstacle2;
-        //private Point PointObstacle3;
-
+        private Point PointCarSprite1;
+        private Point PointCarSprite2;
+        private Point PointObstacle1;
+        private Point PointObstacle2;
+        private Point PointObstacle3;
 
         // Переменные игровой логики
         private Random random = new Random();
@@ -53,6 +52,10 @@ namespace ComputerMasterClass
 
         public Form1()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
             InitializeComponent();
             InitializeTimers();
             InitializeBackground();
@@ -86,7 +89,16 @@ namespace ComputerMasterClass
             );
             if (result == DialogResult.Yes)
             {
-                Application.Restart();
+                PressedA = false;
+                PressedD = false;
+                PressedLeft = false;
+                PressedRight = false;
+                CarSprite1.Location = PointCarSprite1;
+                CarSprite2.Location = PointCarSprite2;
+                Obstacle1.Location = PointObstacle1;
+                Obstacle2.Location = PointObstacle2;
+                Obstacle3.Location = PointObstacle3;
+                StartTimer();
             }
             else Application.Exit();
         }
@@ -131,15 +143,15 @@ namespace ComputerMasterClass
         private void InitializeGameComponents()
         {
             CarSprite1 = pictureBox2;
-            //PointCarSprite1 = CarSprite1.Location;
+            PointCarSprite1 = CarSprite1.Location;
             CarSprite2 = pictureBox3;
-            //PointCarSprite2 = CarSprite2.Location;
+            PointCarSprite2 = CarSprite2.Location;
             Obstacle1 = pictureBox4;
-            //PointObstacle1 = Obstacle1.Location;
+            PointObstacle1 = Obstacle1.Location;
             Obstacle2 = pictureBox5;
-            //PointObstacle2 = Obstacle2.Location;
+            PointObstacle2 = Obstacle2.Location;
             Obstacle3 = pictureBox6;
-            //PointObstacle3 = Obstacle3.Location;
+            PointObstacle3 = Obstacle3.Location;
         }
 
         private void MoveSprite(PictureBox Sprite, int StepX, int StepY)
