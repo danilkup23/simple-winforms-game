@@ -44,7 +44,7 @@ namespace ComputerMasterClass
         private Point PointObstacle3;
 
         // Переменные игровой логики
-        private Random random = new Random();
+        private Random RandomGenerator = new Random();
         private bool PressedA;
         private bool PressedD;
         private bool PressedLeft;
@@ -121,22 +121,16 @@ namespace ComputerMasterClass
         {
             int Interval = (int)(FPS / 7.5);
             timer1.Interval = Interval;
-            timer2.Interval = Interval;
-            timer3.Interval = Interval;
         }
 
         private void StartTimer()
         {
             timer1.Start();
-            timer2.Start();
-            timer3.Start();
         }
 
         private void StopTimers()
         {
-            timer1.Stop();
-            timer2.Stop();
-            timer3.Stop();                
+            timer1.Stop();               
         }
 
         private void InitializeGameComponents()
@@ -164,8 +158,18 @@ namespace ComputerMasterClass
         private void timer1_Tick(object sender, EventArgs e)
         {
             SlidingBackgroundProcess();
-            int randomStepY = random.Next(MinRandomSpeed, MaxRandomSpeed + 1);
-            MoveObstacle(randomStepY, Obstacle1);
+            MoveObstacle(
+                RandomGenerator.Next(MinRandomSpeed, MaxRandomSpeed + 1), 
+                Obstacle1
+            );
+            MoveObstacle(
+                RandomGenerator.Next(MinRandomSpeed, MaxRandomSpeed + 1), 
+                Obstacle2
+            );
+            MoveObstacle(
+                RandomGenerator.Next(MinRandomSpeed, MaxRandomSpeed + 1), 
+                Obstacle3
+            );
 
             // Движение автомобилей
             if (PressedA && CarSprite1.Location.X >= 0)
@@ -256,7 +260,7 @@ namespace ComputerMasterClass
             MoveSprite(Obstacle, 0, RandomStepY);
             if (Obstacle.Location.Y >= FirstBackgroundPicture.Height)
                 Obstacle.Location = new Point(
-                    random.Next(0, FirstBackgroundPicture.Width - Obstacle.Width + 1),
+                    RandomGenerator.Next(0, FirstBackgroundPicture.Width - Obstacle.Width + 1),
                     0
                 );
         }
@@ -278,18 +282,6 @@ namespace ComputerMasterClass
                 backgroundPoint.Y = -SecondBackgroundPicture.Height;
                 SecondBackgroundPicture.Location = backgroundPoint;
             }
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            int RandomStepY = random.Next(MinRandomSpeed, MaxRandomSpeed + 1);
-            MoveObstacle(RandomStepY, Obstacle2);
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            int RandomStepY = random.Next(MinRandomSpeed, MaxRandomSpeed + 1);
-            MoveObstacle(RandomStepY, Obstacle3);
         }
     }
 }
