@@ -61,7 +61,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::ComputerMasterClass.Properties.Resources.Bomb1;
+            this.pictureBox6.Image = global::ComputerMasterClass.Properties.Resources.Bomb;
             this.pictureBox6.Location = new System.Drawing.Point(546, 33);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(64, 69);
@@ -92,7 +92,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::ComputerMasterClass.Properties.Resources.Car_4;
+            this.pictureBox3.Image = global::ComputerMasterClass.Properties.Resources.Car_2;
             this.pictureBox3.Location = new System.Drawing.Point(444, 313);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(72, 154);
@@ -104,7 +104,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::ComputerMasterClass.Properties.Resources.Car_3;
+            this.pictureBox2.Image = global::ComputerMasterClass.Properties.Resources.Car_1;
             this.pictureBox2.Location = new System.Drawing.Point(174, 313);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(73, 154);

@@ -84,25 +84,11 @@
     <None Include="Resources\Fon_sprite.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Car_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Car_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Star.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Bomb.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Car_4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Car_3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Bomb1.png" />
+    <Content Include="Resources\Car_1.png" />
+    <Content Include="Resources\Car_2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

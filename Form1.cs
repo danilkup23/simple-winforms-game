@@ -60,7 +60,6 @@ namespace ComputerMasterClass
             InitializeTimers();
             InitializeBackground();
             InitializeGameComponents();
-            StartGame();
         }
 
         private void StartGame()

@@ -73,16 +73,6 @@ namespace ComputerMasterClass.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bomb1 {
-            get {
-                object obj = ResourceManager.GetObject("Bomb1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Car_1 {
             get {
                 object obj = ResourceManager.GetObject("Car_1", resourceCulture);
@@ -103,26 +93,6 @@ namespace ComputerMasterClass.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Car_3 {
-            get {
-                object obj = ResourceManager.GetObject("Car_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Car_4 {
-            get {
-                object obj = ResourceManager.GetObject("Car_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Fon_sprite {
             get {
                 object obj = ResourceManager.GetObject("Fon_sprite", resourceCulture);
@@ -131,12 +101,12 @@ namespace ComputerMasterClass.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
-        internal static System.Drawing.Bitmap Star {
+        internal static System.Drawing.Icon RaceGame_Ico {
             get {
-                object obj = ResourceManager.GetObject("Star", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("RaceGame_Ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }
